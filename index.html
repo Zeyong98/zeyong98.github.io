@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zeyong Zhang</title>
+<meta name="description" content="Zeyong Zhang, Ph.D. student in Data Science at the New Jersey Institute of Technology. Research on the geometry of large language models: activation steering, hyperbolic representation learning and reasoning.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='none' stroke='%232a2f6c' stroke-width='2.5'/%3E%3Ccircle cx='16' cy='16' r='2.6' fill='%232a2f6c'/%3E%3Ccircle cx='23' cy='11' r='2.6' fill='%23eb6834'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<style>
+:root {
+  --bg: #ffffff;
+  --text: #24292f;
+  --muted: #57606a;
+  --faint: #8c959f;
+  --line: #e7eaee;
+  --link: #1f4fa3;
+  --accent: #2a2f6c;
+  --highlight: #b42318;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 1rem; line-height: 1.65; }
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 0.15em; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+p { margin: 0 0 0.9em; }
+
+.page { max-width: 1140px; margin: 0 auto; padding: 2.5rem 1.25rem 3rem; display: grid; grid-template-columns: 280px 1fr; gap: 2.5rem; }
+
+/* sidebar */
+.side { position: sticky; top: 2rem; align-self: start; text-align: center; }
+.side img { width: 190px; height: 190px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 1rem; }
+.side h1 { font-size: 1.45rem; font-weight: 700; margin: 0 0 0.25rem; line-height: 1.25; }
+.side .role { color: var(--muted); font-size: 0.95rem; margin: 0 0 1rem; }
+.side ul { list-style: none; padding: 0 0 0 0.4rem; margin: 0; text-align: left; font-size: 0.93rem; }
+.side li { display: flex; align-items: center; gap: 0.6rem; padding: 0.32rem 0; color: var(--muted); white-space: nowrap; }
+.side li .fa-fw { width: 1.25em; text-align: center; font-size: 1.05em; color: #4a5059; }
+.side li .fa-google-scholar { color: #4285f4; }
+.side li .fa-linkedin { color: #0a66c2; }
+.side li a { color: var(--text); }
+
+/* main */
+main h2 { font-size: 1.35rem; font-weight: 700; margin: 0 0 0.8rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--line); color: var(--accent); }
+main h2 .ic { margin-right: 0.45rem; }
+section { margin: 0 0 2.4rem; }
+ul.list { padding-left: 1.2rem; margin: 0; }
+ul.list li { margin: 0 0 0.55rem; }
+.sub { color: var(--muted); font-size: 0.93rem; }
+
+.news { list-style: none; padding: 0; margin: 0; }
+.news li { display: grid; grid-template-columns: 6.2rem 1fr; gap: 0.6rem; padding: 0.35rem 0; }
+.news .date { color: var(--muted); font-variant-numeric: tabular-nums; }
+
+/* publication cards */
+.pub-cards { display: grid; gap: 1.1rem; }
+.pub-card { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 1.3rem; align-items: center; padding: 1.1rem 1.2rem; border: 1px solid var(--line); border-radius: 10px; background: #fff; box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05); }
+.pub-thumb { display: flex; flex-direction: column; align-items: flex-start; gap: 0.55rem; }
+.pub-thumb img { width: 100%; height: auto; display: block; border-radius: 8px; border: 1px solid #dcdcdc; background: #fff; }
+.badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 6px; font-size: 0.8rem; font-weight: 700; color: #fff; background: #0e4c92; }
+.badge-venue { background: #16a085; }
+.pub-body { display: flex; flex-direction: column; gap: 0.3rem; }
+.pub-title { margin: 0; font-size: 1.12rem; font-weight: 700; line-height: 1.35; color: var(--text); }
+.pub-authors { margin: 0; color: var(--muted); font-size: 0.95rem; line-height: 1.45; }
+.pub-authors b { color: var(--text); font-weight: 600; }
+.pub-venue { margin: 0; color: var(--muted); font-size: 0.88rem; }
+.pub-highlight { margin: 0.15rem 0 0.2rem; font-weight: 700; color: var(--highlight); font-size: 0.95rem; line-height: 1.5; }
+.pub-links { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.2rem; }
+.pill { display: inline-block; padding: 0.22rem 0.75rem; border: 1.5px solid #cfd5df; border-radius: 8px; font-weight: 600; font-size: 0.86rem; color: var(--link); background: #f8f9fb; transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease; }
+.pill:hover { background: var(--link); color: #fff; border-color: var(--link); text-decoration: none; }
+
+footer { max-width: 1140px; margin: 0 auto; padding: 0 1.25rem 2rem; color: var(--faint); font-size: 0.85rem; text-align: center; }
+
+@media (max-width: 840px) {
+  .page { grid-template-columns: 1fr; gap: 2rem; padding-top: 2rem; }
+  .side { position: static; }
+  .side ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.2rem 1.3rem; }
+  .news li { grid-template-columns: 1fr; gap: 0; }
+  .pub-card { grid-template-columns: 1fr; gap: 0.9rem; }
+  .pub-thumb { max-width: 380px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <aside class="side">
+    <img src="photo.jpg" alt="Portrait of Zeyong Zhang" width="190" height="190">
+    <h1>Zeyong Zhang</h1>
+    <p class="role">Ph.D. student in Data Science<br>New Jersey Institute of Technology</p>
+    <ul>
+      <li><i class="fa-solid fa-fw fa-location-dot" aria-hidden="true"></i>Newark, New Jersey, USA</li>
+      <li><i class="fa-solid fa-fw fa-building-columns" aria-hidden="true"></i><a href="https://www.njit.edu/">New Jersey Institute of Technology</a></li>
+      <li><i class="fa-solid fa-fw fa-envelope" aria-hidden="true"></i><a href="mailto:zz63@njit.edu">zz63@njit.edu</a></li>
+      <li><i class="fa-brands fa-fw fa-google-scholar" aria-hidden="true"></i><a href="https://scholar.google.com/citations?user=DjfBpfwAAAAJ">Google Scholar</a></li>
+      <li><i class="fa-brands fa-fw fa-github" aria-hidden="true"></i><a href="https://github.com/Zeyong98">GitHub</a></li>
+      <li><i class="fa-brands fa-fw fa-linkedin" aria-hidden="true"></i><a href="https://www.linkedin.com/in/zeyong">LinkedIn</a></li>
+    </ul>
+  </aside>
+
+  <main>
+    <section id="about">
+      <h2><span class="ic" aria-hidden="true">👋</span>About</h2>
+      <p>I am a second-year Ph.D. student in the <a href="https://ds.njit.edu/">Department of Data Science</a> at the New Jersey Institute of Technology (NJIT), where I am advised by <a href="https://gracexu182.github.io/">Prof. Mengjia Xu</a> in the Xu Lab. My research is on the geometry of large language models: how their hidden states are organized, and how that structure can be used at inference time. Recent work includes activation steering guided by the model's own uncertainty, hyperbolic representation learning for LLMs, and LLM reasoning over mathematical and tabular problems.</p>
+      <p>Feel free to reach out by email if you would like to chat or collaborate.</p>
+    </section>
+
+    <section id="education">
+      <h2><span class="ic" aria-hidden="true">🎓</span>Education</h2>
+      <ul class="list">
+        <li><a href="https://ds.njit.edu/phd-data-science">Ph.D. in Data Science</a>, New Jersey Institute of Technology, 2025 to present<br><span class="sub">Advisor: Prof. Mengjia Xu</span></li>
+        <li><a href="https://www.bu.edu/questrom/degree-programs/ms-in-mathematical-finance-and-financial-technology/">M.S. in Mathematical Finance and Financial Technology</a>, Boston University, Questrom School of Business, 2023 to 2025</li>
+        <li><a href="https://www.manchester.ac.uk/study/undergraduate/courses/2027/00590/bsc-mathematics/">B.Sc. in Pure Mathematics</a>, University of Manchester, 2020 to 2023</li>
+      </ul>
+    </section>
+
+    <section id="publications">
+      <h2><span class="ic" aria-hidden="true">📄</span>Publications</h2>
+      <div class="pub-cards">
+
+        <article class="pub-card">
+          <div class="pub-thumb">
+            <img src="images/hest.png" alt="Overview of HEST: the entropy gate, the hyperbolic probe and the steering step">
+            <span class="badge badge-preprint">Preprint</span>
+          </div>
+          <div class="pub-body">
+            <h3 class="pub-title">Hesitation Has a Geometry: Entropy-Trained Hyperbolic Probes for Sparse Activation Steering</h3>
+            <p class="pub-authors"><b>Zeyong Zhang</b>, Tung Sum Thomas Kwok, Tengfei Ma, Mengjia Xu</p>
+            <p class="pub-venue">arXiv preprint, 2026</p>
+            <p class="pub-highlight">Steering a language model only at the tokens where it hesitates, with a hyperbolic probe trained on the model's own next-token entropy and no answer labels</p>
+            <div class="pub-links"><a class="pill" href="https://arxiv.org/abs/2610.02391">arXiv</a><a class="pill" href="https://github.com/Zeyong98/HEST">Code</a><a class="pill" href="https://zeyong98.github.io/HEST/">Project page</a></div>
+          </div>
+        </article>
+
+        <article class="pub-card">
+          <div class="pub-thumb">
+            <img src="images/tabalign.png" alt="Overview of TabAlign">
+            <span class="badge badge-venue">NeurIPS 2026</span>
+          </div>
+          <div class="pub-body">
+            <h3 class="pub-title">From Table to Cell: Attention for Better Reasoning with TabAlign</h3>
+            <p class="pub-authors">Tung Sum Thomas Kwok, <b>Zeyong Zhang</b>, Xinyu Wang, Chunhe Wang, Xiaofeng Lin, Hanwei Wu, Lei Ding, Guang Cheng, Zhijiang Guo</p>
+            <p class="pub-highlight">A masked diffusion planner writes each table reasoning step as a mask over cells, and an attention-based verifier checks that the reasoner looks at those cells</p>
+            <div class="pub-links"><a class="pill" href="https://arxiv.org/abs/2605.14465">arXiv</a><a class="pill" href="https://github.com/ThomasK1018/TabAlign">Code</a></div>
+          </div>
+        </article>
+
+        <article class="pub-card">
+          <div class="pub-thumb">
+            <img src="images/hyperbolic_llm.png" alt="Hybrid hyperbolic-Euclidean architecture from the survey">
+            <span class="badge badge-venue">SIAM Review</span>
+          </div>
+          <div class="pub-body">
+            <h3 class="pub-title">Hyperbolic Large Language Models</h3>
+            <p class="pub-authors">Sarang Patil, <b>Zeyong Zhang</b>, Yiran Huang, Tengfei Ma, Mengjia Xu</p>
+            <p class="pub-venue">SIAM Review, accepted, to appear</p>
+            <p class="pub-highlight">A survey of LLMs that use hyperbolic geometry as their representation space, organized into four families: exp/log map models, hyperbolic fine-tuned models, fully hyperbolic LLMs and hyperbolic state-space models</p>
+            <div class="pub-links"><a class="pill" href="https://arxiv.org/abs/2509.05757">arXiv</a><a class="pill" href="https://github.com/sarangp2402/Hyperbolic-LLM-Models">Paper list</a></div>
+          </div>
+        </article>
+
+        <article class="pub-card">
+          <div class="pub-thumb">
+            <img src="images/prro.png" alt="The PRRO pipeline: data pruning and column reordering">
+            <span class="badge badge-venue">KDD 2025 Workshop</span>
+          </div>
+          <div class="pub-body">
+            <h3 class="pub-title">Towards High Supervised Learning Utility Training Data Generation: Data Pruning and Column Reordering</h3>
+            <p class="pub-authors">Tung Sum Thomas Kwok, <b>Zeyong Zhang</b>, Chi-Hua Wang, Guang Cheng</p>
+            <p class="pub-venue">KDD 2025 Workshop on Evaluation and Trustworthiness of Agentic and Generative AI Models</p>
+            <p class="pub-highlight">Data pruning and column reordering make a tabular generator produce synthetic data that trains better supervised models, on 22 public datasets</p>
+            <div class="pub-links"><a class="pill" href="https://arxiv.org/abs/2507.10088">arXiv</a></div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="news">
+      <h2><span class="ic" aria-hidden="true">📢</span>News</h2>
+      <ul class="news">
+        <li><span class="date">Sep 2026</span><span>TabAlign is accepted to NeurIPS 2026.</span></li>
+        <li><span class="date">Nov 2025</span><span>Our survey <em>Hyperbolic Large Language Models</em> is accepted to SIAM Review.</span></li>
+        <li><span class="date">Sep 2025</span><span>Started my Ph.D. in Data Science at NJIT, advised by Prof. Mengjia Xu.</span></li>
+        <li><span class="date">Jul 2025</span><span>PRRO is accepted to the KDD 2025 Workshop on Evaluation and Trustworthiness of Agentic and Generative AI Models.</span></li>
+        <li><span class="date">Jan 2025</span><span>Graduated from the M.S. in Mathematical Finance and Financial Technology program at Boston University.</span></li>
+      </ul>
+    </section>
+
+    <section id="awards">
+      <h2><span class="ic" aria-hidden="true">🏆</span>Honors and Awards</h2>
+      <ul class="list">
+        <li>Graduation with High Honors, Boston University, Questrom School of Business (2025)</li>
+        <li>Dean's Achievement Scholarship, Boston University, Questrom School of Business (2023)</li>
+        <li>Dean's Award for Achievement, University of Manchester (2023)</li>
+      </ul>
+    </section>
+
+    <section id="misc">
+      <h2><span class="ic" aria-hidden="true">🏸</span>Beyond Research</h2>
+      <p>Outside research, I enjoy playing badminton, and I am a long-time fan of ACG culture: anime, comics and games.</p>
+    </section>
+  </main>
+</div>
+<footer>Zeyong Zhang, 2026.</footer>
+</body>
+</html>
