@@ -47,7 +47,6 @@
   --line: #e7eaee;
   --link: #1f4fa3;
   --accent: #2a2f6c;
-  --highlight: #b42318;
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 * { box-sizing: border-box; }
@@ -106,7 +105,6 @@ ul.list li { margin: 0 0 0.55rem; }
 .pub-authors b { color: var(--text); font-weight: 600; }
 .pub-venue { margin: 0; color: var(--muted); font-size: 0.88rem; }
 .pub-desc { margin: 0.15rem 0 0.2rem; color: var(--text); font-size: 0.95rem; line-height: 1.5; }
-.pub-desc .key { color: var(--highlight); }
 .pub-links { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.2rem; }
 .pill { display: inline-block; padding: 0.22rem 0.75rem; border: 1.5px solid #cfd5df; border-radius: 8px; font-weight: 600; font-size: 0.86rem; color: var(--link); background: #f8f9fb; transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease; }
 .pill:hover { background: var(--link); color: #fff; border-color: var(--link); text-decoration: none; }
@@ -186,7 +184,7 @@ footer { max-width: 1140px; margin: 0 auto; padding: 0 1.25rem 2rem; color: var(
             <h3 class="pub-title">Hesitation Has a Geometry: Entropy-Trained Hyperbolic Probes for Sparse Activation Steering</h3>
             <p class="pub-authors"><b>Zeyong Zhang</b>, Tung Sum Thomas Kwok, Tengfei Ma, Mengjia Xu</p>
             <p class="pub-venue">arXiv preprint, 2026</p>
-            <p class="pub-desc">HEST steers a language model <span class="key">only at the tokens where it hesitates</span>. An entropy gate decides when to act, and a hyperbolic probe trained on the model's own next-token entropy, with no answer labels, decides how. On MATH-500 and GSM8K it improves greedy accuracy of Qwen2.5-Math and Llama-3.1 models while touching about one to three percent of the tokens.</p>
+            <p class="pub-desc">HEST steers a language model only at the tokens where it hesitates. An entropy gate decides when to act, and a hyperbolic probe trained on the model's own next-token entropy, with no answer labels, decides how. On MATH-500 and GSM8K it improves greedy accuracy of Qwen2.5-Math and Llama-3.1 models while touching about one to three percent of the tokens.</p>
             <div class="pub-links"><a class="pill" href="https://arxiv.org/abs/2610.02391">arXiv</a><a class="pill" href="https://github.com/Zeyong98/HEST">Code</a><a class="pill" href="https://zeyong98.github.io/HEST/">Project page</a></div>
           </div>
         </article>
@@ -199,7 +197,7 @@ footer { max-width: 1140px; margin: 0 auto; padding: 0 1.25rem 2rem; color: var(
           <div class="pub-body">
             <h3 class="pub-title">From Table to Cell: Attention for Better Reasoning with TabAlign</h3>
             <p class="pub-authors">Tung Sum Thomas Kwok, <b>Zeyong Zhang</b>, Xinyu Wang, Chunhe Wang, Xiaofeng Lin, Hanwei Wu, Lei Ding, Guang Cheng, Zhijiang Guo</p>
-            <p class="pub-desc">A planned table reasoning framework. A <span class="key">masked diffusion planner</span> writes each reasoning step as a binary mask over table cells, and a lightweight verifier scores each step by how well the reasoner's attention overlaps the designated cells. Across eight table question answering and fact verification benchmarks, TabAlign improves average accuracy by 15.76 points over the strongest open-source baseline of comparable size.</p>
+            <p class="pub-desc">A planned table reasoning framework. A masked diffusion planner writes each reasoning step as a binary mask over table cells, and a lightweight verifier scores each step by how well the reasoner's attention overlaps the designated cells. Across eight table question answering and fact verification benchmarks, TabAlign improves average accuracy by 15.76 points over the strongest open-source baseline of comparable size.</p>
             <div class="pub-links"><a class="pill" href="https://arxiv.org/abs/2605.14465">arXiv</a><a class="pill" href="https://github.com/ThomasK1018/TabAlign">Code</a></div>
           </div>
         </article>
@@ -213,7 +211,7 @@ footer { max-width: 1140px; margin: 0 auto; padding: 0 1.25rem 2rem; color: var(
             <h3 class="pub-title">Hyperbolic Large Language Models</h3>
             <p class="pub-authors">Sarang Patil, <b>Zeyong Zhang</b>, Yiran Huang, Tengfei Ma, Mengjia Xu</p>
             <p class="pub-venue">SIAM Review, accepted, to appear</p>
-            <p class="pub-desc">A survey of large language models that use <span class="key">hyperbolic geometry as their representation space</span>. It organizes existing models into four categories (hyperbolic LLMs through exp/log maps, hyperbolic fine-tuned models, fully hyperbolic LLMs, and hyperbolic state-space models), reviews applications, and outlines open directions. A curated list of papers, models, datasets and code is maintained on GitHub.</p>
+            <p class="pub-desc">A survey of large language models that use hyperbolic geometry as their representation space. It organizes existing models into four categories (hyperbolic LLMs through exp/log maps, hyperbolic fine-tuned models, fully hyperbolic LLMs, and hyperbolic state-space models), reviews applications, and outlines open directions. A curated list of papers, models, datasets and code is maintained on GitHub.</p>
             <div class="pub-links"><a class="pill" href="https://arxiv.org/abs/2509.05757">arXiv</a><a class="pill" href="https://github.com/sarangp2402/Hyperbolic-LLM-Models">Paper list</a></div>
           </div>
         </article>
@@ -227,7 +225,7 @@ footer { max-width: 1140px; margin: 0 auto; padding: 0 1.25rem 2rem; color: var(
             <h3 class="pub-title">Towards High Supervised Learning Utility Training Data Generation: Data Pruning and Column Reordering</h3>
             <p class="pub-authors">Tung Sum Thomas Kwok, <b>Zeyong Zhang</b>, Chi-Hua Wang, Guang Cheng</p>
             <p class="pub-venue">KDD 2025 Workshop on Evaluation and Trustworthiness of Agentic and Generative AI Models</p>
-            <p class="pub-desc">PRRO brings data-centric techniques to tabular data synthesis: <span class="key">data pruning</span> guides the generator toward observations with a high signal-to-noise ratio, and <span class="key">column reordering</span> aligns the generator with the downstream supervised model. On 22 public datasets, synthetic data produced with PRRO trains better supervised models than data produced without it.</p>
+            <p class="pub-desc">PRRO brings data-centric techniques to tabular data synthesis: data pruning guides the generator toward observations with a high signal-to-noise ratio, and column reordering aligns the generator with the downstream supervised model. On 22 public datasets, synthetic data produced with PRRO trains better supervised models than data produced without it.</p>
             <div class="pub-links"><a class="pill" href="https://arxiv.org/abs/2507.10088">arXiv</a></div>
           </div>
         </article>
@@ -238,10 +236,10 @@ footer { max-width: 1140px; margin: 0 auto; padding: 0 1.25rem 2rem; color: var(
     <section id="news">
       <h2><span class="ic" aria-hidden="true">📢</span>News</h2>
       <ul class="news">
-        <li><span class="date">Sep 2026</span><span>TabAlign is accepted to NeurIPS 2026.</span></li>
-        <li><span class="date">Nov 2025</span><span>Our survey <em>Hyperbolic Large Language Models</em> is accepted to SIAM Review.</span></li>
+        <li><span class="date">Sep 2026</span><span><em>From Table to Cell: Attention for Better Reasoning with TabAlign</em> is accepted to NeurIPS 2026.</span></li>
+        <li><span class="date">Nov 2025</span><span><em>Hyperbolic Large Language Models</em> is accepted to SIAM Review.</span></li>
         <li><span class="date">Sep 2025</span><span>Started my Ph.D. in Data Science at NJIT, advised by Prof. Mengjia Xu.</span></li>
-        <li><span class="date">Jul 2025</span><span>PRRO is accepted to the KDD 2025 Workshop on Evaluation and Trustworthiness of Agentic and Generative AI Models.</span></li>
+        <li><span class="date">Jul 2025</span><span><em>Towards High Supervised Learning Utility Training Data Generation: Data Pruning and Column Reordering</em> is accepted to the KDD 2025 Workshop on Evaluation and Trustworthiness of Agentic and Generative AI Models.</span></li>
         <li><span class="date">Jan 2025</span><span>Graduated from the M.S. in Mathematical Finance and Financial Technology program at Boston University.</span></li>
       </ul>
     </section>
